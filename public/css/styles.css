@@ -24,3 +24,18 @@ body {
     background-color: #1259c3;
     color: white;
 }
+
+body #footer{
+    background-color: white;
+    color: #666;
+    text-align: center;
+}
+
+#footer i{
+    font-size: 30px;
+    color: #1259c3;
+}
+
+#lupa{
+    background-color: white;
+}
