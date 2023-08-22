@@ -5,19 +5,19 @@ body {
     margin: 0px;
 }
 
-#titulares{
+.titulares{
     font-size: 24px;
 }
 
-#precios{
+.precios{
     font-size: 18px;
 }
 
-#descuentos{
+.descuentos{
     font-size: 16px;
 }
 
-#descripciones{
+.descripciones{
     font-size: 16px;
 }
 
@@ -33,7 +33,7 @@ body {
 
 }
 
-#footer{
+.footer{
     background-color: white;
     color: #666;
     text-align: center;
@@ -41,12 +41,12 @@ body {
 
 }
 
-#footer i{
+.footer i{
     font-size: 2em;
     color: #1259c3;
 }
 
-#lupa{
+.lupa{
     background-color: white;
     font-size: 18px;
     padding: 5px;
