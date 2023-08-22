@@ -15,6 +15,10 @@ body {
     padding: 5px;
 }
 
+#margen-iconos-header {
+    margin: 0px 4px 0px;
+}
+
 #burger{
     background-color: #1259c3;
     color: white;
