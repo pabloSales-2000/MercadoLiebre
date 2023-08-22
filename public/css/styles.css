@@ -9,16 +9,10 @@ body {
     font-size: 24px;
 }
 
-.precios{
+.lupa{
+    background-color: white;
     font-size: 18px;
-}
-
-.descuentos{
-    font-size: 16px;
-}
-
-.descripciones{
-    font-size: 16px;
+    padding: 5px;
 }
 
 #burger{
@@ -32,13 +26,22 @@ body {
     justify-content: center;
 
 }
+.precios{
+    font-size: 18px;
+}
+
+.descuentos{
+    font-size: 16px;
+}
+
+.descripciones{
+    font-size: 16px;
+}
 
 .footer{
     background-color: white;
     color: #666;
     text-align: center;
-   /* margin: 0px -8px -11px -8px; */
-
 }
 
 .footer i{
@@ -46,11 +49,7 @@ body {
     color: #1259c3;
 }
 
-.lupa{
-    background-color: white;
-    font-size: 18px;
-    padding: 5px;
-}
+
 
 *{
     box-sizing: border-box;
