@@ -2,6 +2,7 @@ body {
     font-family: 'Bricolage Grotesque', sans-serif;
     background-color: #EAC926;
     font-size: 12px;
+    margin: 0px;
 }
 
 #titulares{
@@ -23,19 +24,34 @@ body {
 #burger{
     background-color: #1259c3;
     color: white;
+    padding: 5px;
 }
 
-body #footer{
+.burger-menu{
+    display: flex;
+    justify-content: center;
+
+}
+
+#footer{
     background-color: white;
     color: #666;
     text-align: center;
+   /* margin: 0px -8px -11px -8px; */
+
 }
 
 #footer i{
-    font-size: 30px;
+    font-size: 2em;
     color: #1259c3;
 }
 
 #lupa{
     background-color: white;
+    font-size: 18px;
+    padding: 5px;
+}
+
+*{
+    box-sizing: border-box;
 }
