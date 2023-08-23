@@ -12,6 +12,9 @@ body {
 header{
     background-color: #EAC926;
 }
+ul{
+    padding:0px;
+}
 
 .titulares{
     font-size: 24px;
@@ -21,6 +24,9 @@ header{
     background-color: white;
     font-size: 18px;
     padding: 5px;
+}
+.nav{
+    display:none;
 }
 
 #margen-iconos-header {
@@ -36,10 +42,14 @@ header{
     background-color: #1259c3;
     color: white;
     padding: 5px;
+    display:block
 }
 
-.producto2{
+.productos{
     border-top: solid 1px #ebebeb;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #publicidad{
@@ -60,6 +70,7 @@ header{
     background-color: white;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
+
 .imagen-article{
     width: 100%;
 }
@@ -91,17 +102,31 @@ header{
     color: #1259c3;
 }
 
-.nav{
-    display: none;
-}
 
-@media (min-width:361px){
+
+@media (min-width:481px){
     /*tablets*/
     .descripcion{
         display:block;
     }
+    .nav{
+        display:block;
+    }
+    .burger-menu{
+        display: none;
+    }
 }
 
-@media (min-width:769px){
+@media (min-width:1280px){
     /*desktop*/
+    .descripcion{
+        display:block;
+    }
+    .nav{
+        display:block;
+    }
+    .burger-menu{
+        display: none;
+    }
+
 }
