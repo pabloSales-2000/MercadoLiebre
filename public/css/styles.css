@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Bricolage Grotesque', sans-serif;
     background-color: #EAC926;
@@ -30,6 +34,27 @@ body {
     justify-content: center;
 
 }
+
+
+#publicidad{
+    width: 100vw;
+}
+
+
+.main{
+    width: 100vw;
+    text-align: center;
+    margin:auto;
+    background-color:  #ebebeb;
+}
+
+
+.articulos{
+    margin:10px;
+    border-top: solid 1px #ebebeb;
+    padding: 15px;
+}
+
 .precios{
     font-size: 18px;
 }
@@ -53,8 +78,3 @@ body {
     color: #1259c3;
 }
 
-
-
-*{
-    box-sizing: border-box;
-}
