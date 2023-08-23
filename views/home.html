@@ -20,12 +20,13 @@
         <div><img src="/images/logo-mercado-liebre.svg" width="35%" alt="Logotipo"></div>
 
         <h4>Lugar para poner la barra de busqueda</h4>
-       
+
         <div><i id="lupa" class="fa-solid fa-magnifying-glass"></i></div>
-        
-        <h4><i id="margen-iconos-header" class="fa-solid fa-hand-holding-dollar"></i>compra en cuotas y sin tarjeta de credito</h4>
-        
-        <nav>
+
+        <h4><i id="margen-iconos-header" class="fa-solid fa-hand-holding-dollar"></i>compra en cuotas y sin tarjeta de
+            credito</h4>
+
+        <nav class="nav">
             <ul type="circle">
                 <li><a href="#">Ofertas</a></li>
                 <li><a href="#">Tiendas oficiales</a></li>
@@ -33,31 +34,37 @@
                 <li><a href="#">Ayuda</a></li>
             </ul>
         </nav>
-        <nav>
+        <nav class="nav">
             <ul type="circle">
-                <li><a href="#">Crea tu cuenta</a><i id="margen-iconos-header"  class="fa-regular fa-id-card"></i></li>
-                <li><a href="#">Ingresa</a><i id="margen-iconos-header"  class="fa-solid fa-right-to-bracket"></i></li>
-                <li><a href="#">Mis compras</a><i id="margen-iconos-header" class="fa-solid fa-basket-shopping"></i></li>
+                <li><a href="#">Crea tu cuenta</a><i id="margen-iconos-header" class="fa-regular fa-id-card"></i></li>
+                <li><a href="#">Ingresa</a><i id="margen-iconos-header" class="fa-solid fa-right-to-bracket"></i></li>
+                <li><a href="#">Mis compras</a><i id="margen-iconos-header" class="fa-solid fa-basket-shopping"></i>
+                </li>
             </ul>
         </nav>
-        <div class="burger-menu">
-            <i id="burger" class="fas fa-bars"></i>
+        <div class="burger">
+        <button class="burger-menu">
+            <i class="fas fa-bars"></i>
+        </button>
         </div>
     </header>
 
+    <div><img src="/images/homebaner.jpg" width=100% alt="imagen"></div> <!--llevarme w a css-->
+
     <main class="main">
-        <div><img src="/images/homebaner.jpg" width=100% alt="imagen"></div>
 
         <section>
             <h3 class="titulares">Basado en tu ultima vista</h3>
 
             <article class="articulos">
-                <div><img src="/images/cafetera.jpg" width="25%" alt="imagen"></div>
-                <ul type="none">
-                    <li class="precios">$6.770</li>
-                    <li class="descuentos">40% off</li>
-                </ul>
-                <h4>Cafetera Moulinex</h4>
+                <div><img class="imagen-article" src="/images/cafetera.jpg" alt="imagen"></div>
+                <div class="producto2">
+                    <ul type="none">
+                        <li class="precios">$6.770</li>
+                        <li class="descuentos">40% off</li>
+                    </ul>
+                    <h4 class="descripcion">Cafetera Moulinex</h4>
+                </div>
             </article>
 
             <article class="articulos">
@@ -128,7 +135,7 @@
                         <li class="descuentos">5% off</li>
                     </ul>
                 </div>
-               
+
                 <h4>SmartTv Samsung 43"</h4>
             </article>
 
