@@ -12,6 +12,7 @@ body {
 header{
     background-color: #EAC926;
 }
+
 ul{
     padding:0px;
 }
@@ -25,6 +26,7 @@ ul{
     font-size: 18px;
     padding: 5px;
 }
+
 .nav{
     display:none;
 }
