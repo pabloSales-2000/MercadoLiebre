@@ -50,8 +50,8 @@ ul{
 .productos{
     border-top: solid 1px #ebebeb;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
 }
 
 #publicidad{
