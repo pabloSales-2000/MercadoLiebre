@@ -51,7 +51,8 @@ ul{
     border-top: solid 1px #ebebeb;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+ /*esta linea no centra el contenido por mas que este o no este*/
+    text-align: center;
 }
 
 #publicidad{
@@ -60,15 +61,24 @@ ul{
 
 
 .main{
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
     width: 90vw;
-    text-align: center;
     margin:auto;
+}
+
+.seccion-productos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
 .articulos{
-    margin:10px;
-    padding: 15px;
+    width: 100%;
+  /*  padding: 15px;*/
     background-color: white;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
@@ -116,6 +126,15 @@ ul{
     }
     .burger-menu{
         display: none;
+    }
+    .seccion-productos{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .articulos{
+        width: 47%;
+        margin-bottom: 10px;
     }
 }
 
