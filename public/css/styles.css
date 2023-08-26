@@ -10,7 +10,7 @@ body {
 }
 
 header{
-    background-color: #EAC926;
+    background-color: #fff046;
 }
 
 ul{
@@ -19,6 +19,23 @@ ul{
 
 .titulares{
     font-size: 24px;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+}
+
+#logo{
+    width: 100%;
+}
+
+#barra-busq{
+    width: 100%;
+    margin:0;
+}
+#compra-en-cuotas{
+    width: 100%;
 }
 
 #lupa{
@@ -119,6 +136,25 @@ ul{
 
 @media (min-width:481px){
     /*tablets*/
+    
+    .header{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #logo{
+        width: 33%;
+    }
+    #barra-busq{
+        width: 33%;
+    }
+    #compra-en-cuotas{
+        width: 33%;
+        text-align: center;
+    }
+    #compra-en-cuotas-text {
+        font-size: 60px;
+    }
+
     .descripcion{
         display:block;
     }
@@ -139,23 +175,27 @@ ul{
 }
 
 @media (min-width:769px){
-    /*desktop*/
-    .descripcion{
-        display:block;
+        /*desktop*/
+    #logo{
+        width: 15%;
     }
-    .nav{
-        display:block;
+    #barra-busq{
+        width: 42%;
     }
-    .burger-menu{
-        display: none;
+    #compra-en-cuotas{
+        width: 27%;
     }
     .articulos{
         width: 23%;
-        margin: 0;
-    }
-    .main{
-        margin-bottom: 15px;
     }
 
-
+    
 }
+
+
+
+
+
+
+
+
