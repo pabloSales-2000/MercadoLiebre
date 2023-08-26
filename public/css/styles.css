@@ -115,6 +115,7 @@ ul{
 
 .descuentos{
     font-size: 16px;
+    color: #39b54a;
 }
 
 .descripciones{
@@ -159,10 +160,10 @@ ul{
         display:block;
     }
     .nav{
-        display:block;
+        display:none;
     }
     .burger-menu{
-        display: none;
+        display: block;
     }
     .seccion-productos{
         flex-direction: row;
@@ -171,6 +172,24 @@ ul{
     }
     .articulos{
         width: 47%;
+    }
+    main section article i{
+        display: block;
+        color: #39b54a;
+        font-size: 16px;
+        padding: 5px;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #39b54a;
+        background-color: #FFF;
+        border-radius: 50%;
+        position: absolute;
+        right: 20px;
+        top: -15px;
+        }
+
+    .productos {
+        position: relative;
     }
 }
 
@@ -185,8 +204,41 @@ ul{
     #compra-en-cuotas{
         width: 27%;
     }
+    .burger-menu{
+        display: none;
+    }
+    .nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+    }
+    .nav-items{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1.5em
+    }
+    #nav_items{
+        font-size: 15px;
+        cursor: pointer;
+    }
+
     .articulos{
         width: 23%;
+    }
+    .container-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 15px;
+        margin-top: 50px;
+        text-align: center;
+    }
+    .item-footer{
+        display:flex;
+        flex-direction: column;
+        margin: 0 60px;
     }
 
     
