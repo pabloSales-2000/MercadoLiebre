@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="/css/styles.css" rel="stylesheet">
     <title>MercadoLiebre</title>
 </head>
@@ -17,9 +20,14 @@
         <div class="header">
             <div id="logo"><img src="/images/logo-mercado-liebre.svg" alt="Logotipo"></div>
 
-            <div id="barra-busq">
-                <h4>Lugar para poner la barra de busqueda <!--<i id="lupa" class="fa-solid fa-magnifying-glass"></i>-->
-                </h4>
+            <div class="barra-busq-padre">
+                <form action="GET">
+                    <input class="barra-busq" type="text" placeholder="Buscar productos, marcas y mas ...">
+                    <div class="submit-clickeable">
+                        <i class="fa-solid fa-magnifying-glass"></i><!--id=lupa-->
+                    </div>
+                </form>
+
             </div>
 
             <div id="comprar-en-cuotas">
@@ -171,26 +179,26 @@
 
     <footer class="footer">
         <div class="container-footer">
-        <section class="item-footer">
-            <i class="fa-solid fa-credit-card"></i>
-            <h3>Pagá con tarjeta o en efectivo</h3>
-            <p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en
-                puntos de pago. ¡Y siempre es seguro!</p>
-        </section>
+            <section class="item-footer">
+                <i class="fa-solid fa-credit-card"></i>
+                <h3>Pagá con tarjeta o en efectivo</h3>
+                <p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en
+                    puntos de pago. ¡Y siempre es seguro!</p>
+            </section>
 
-        <seccion class="item-footer">
-            <i class="fa-solid fa-gift"></i>
-            <h3>Envío gratis desde $ 2.500</h3>
-            <p>Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles de
-                productos. Es un beneficio de Mercado Puntos.</p>
-        </seccion>
+            <seccion class="item-footer">
+                <i class="fa-solid fa-gift"></i>
+                <h3>Envío gratis desde $ 2.500</h3>
+                <p>Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles de
+                    productos. Es un beneficio de Mercado Puntos.</p>
+            </seccion>
 
-        <section class="item-footer">
-            <i class="fa-solid fa-user-shield"></i>
-            <h3>Seguridad, de principio a fin</h3>
-            <p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer,
-                porque estás siempre protegid@.</p>
-        </section>
+            <section class="item-footer">
+                <i class="fa-solid fa-user-shield"></i>
+                <h3>Seguridad, de principio a fin</h3>
+                <p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer,
+                    porque estás siempre protegid@.</p>
+            </section>
         </div>
         <section>
             <p>Copyright © 1999-2020 MercadoLiebre S.R.L.</p>

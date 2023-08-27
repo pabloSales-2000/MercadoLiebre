@@ -11,6 +11,8 @@ body {
 
 header{
     background-color: #fff046;
+    padding: 10px;
+    font-size: 12px;
 }
 
 ul{
@@ -30,19 +32,35 @@ ul{
     width: 100%;
 }
 
-#barra-busq{
-    width: 100%;
-    margin:0;
+.barra-busq-padre{
+    width: 50%;
+    position: relative;
 }
-#compra-en-cuotas{
+.barra-busq{
     width: 100%;
+    padding: 13px;
+    border: none;
+}
+.submit-clickeable{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 
-#lupa{
+/*#lupa{
     background-color: white;
     font-size: 18px;
     padding: 5px;
 }
+*/
+
+/*div#compra-en-cuotas p{
+    width: 100%;
+} nada de lo q pongo en este selector aplica en la pagina */
+
+
 
 .nav{
     display:none;
@@ -126,11 +144,38 @@ ul{
     background-color: white;
     color: #666;
     text-align: center;
+    font-size: 12px;
 }
 
 .footer i{
     font-size: 2em;
     color: #1259c3;
+}
+main section article i{
+    display: block;
+    color: #39b54a;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    }
+
+.productos {
+    position: relative;
+}
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+    margin-top: 50px;
+    text-align: center;
 }
 
 
@@ -145,8 +190,9 @@ ul{
     #logo{
         width: 33%;
     }
-    #barra-busq{
-        width: 33%;
+    .barra-busq-padre{
+        width: 30%;
+        margin: 0px 10px;
     }
     #compra-en-cuotas{
         width: 33%;
@@ -173,28 +219,15 @@ ul{
     .articulos{
         width: 47%;
     }
-    main section article i{
-        display: block;
-        color: #39b54a;
-        font-size: 16px;
-        padding: 5px;
-        width: 30px;
-        height: 30px;
-        border: 1px solid #39b54a;
-        background-color: #FFF;
-        border-radius: 50%;
-        position: absolute;
-        right: 20px;
-        top: -15px;
-        }
 
-    .productos {
-        position: relative;
-    }
 }
 
 @media (min-width:769px){
         /*desktop*/
+    header{
+        font-size: 15px;
+    }
+    
     #logo{
         width: 15%;
     }
@@ -211,7 +244,7 @@ ul{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-
+        align-items: center;
     }
     .nav-items{
         display: flex;
@@ -228,13 +261,9 @@ ul{
         width: 23%;
     }
     .container-footer{
-        display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        padding: 15px;
-        margin-top: 50px;
-        text-align: center;
     }
+
     .item-footer{
         display:flex;
         flex-direction: column;
