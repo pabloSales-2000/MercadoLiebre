@@ -88,6 +88,7 @@ ul{
     flex-direction: column;
  /*esta linea no centra el contenido por mas que este o no este*/
     text-align: center;
+    position: relative;
 }
 
 #publicidad{
@@ -124,7 +125,7 @@ ul{
 }
 
 .descripcion{
-    display:none;
+    display:block;
 }
 
 .precios{
@@ -161,14 +162,12 @@ main section article i{
     border: 1px solid #39b54a;
     background-color: #FFF;
     border-radius: 50%;
-    position: absolute;
     right: 20px;
     top: -15px;
+    position: absolute;
     }
 
-.productos {
-    position: relative;
-}
+
 .container-footer{
     display: flex;
     flex-direction: column;
@@ -176,6 +175,15 @@ main section article i{
     padding: 15px;
     margin-top: 50px;
     text-align: center;
+}
+
+.item-footer i:hover{
+    transition: 450ms;
+}
+
+.item-footer i:hover{
+    color:#03264C ;
+    
 }
 
 
@@ -204,6 +212,7 @@ main section article i{
 
     .descripcion{
         display:block;
+        transition: all 50ms;
     }
     .nav{
         display:none;
@@ -218,6 +227,26 @@ main section article i{
     }
     .articulos{
         width: 47%;
+        box-shadow: none;
+        transition: all 500ms;
+    }
+    .articulos .productos i{
+        transition: all 500ms;
+    }
+
+    .articulos:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+      
+    .articulos:hover .productos i {
+        transform: rotate(-90deg);
+    }
+    
+    .articulos:hover .descripcion {
+        display:block;
+        font-size: 15px;
+        margin-top: 5px;
+        color: #666;
     }
 
 }

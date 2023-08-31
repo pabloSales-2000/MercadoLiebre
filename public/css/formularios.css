@@ -94,11 +94,21 @@ main{
 
 .boton-confirmar{
     background-color:#03264C;
+    transition: all 450ms;
+}
+.boton-confirmar:hover{
+    background-color: #0022AA;
 }
 
 .boton-borrar{
     background-color: rgb(188, 65, 65);
+    transition: all 450ms;
 }
+.boton-borrar:hover{
+    background-color: rgb(237, 35, 35);
+
+}
+
 
 @media (min-width:481px){
     .form-container {
