@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const publicPath = path.resolve(__dirname, './public')
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-    console.log(`[servidor]: corriendo en http://localhost:8080/`);
+    console.log(`[servidor]: corriendo en el puerto ${PORT}`);
 })
 
 app.use(express.static(publicPath));
