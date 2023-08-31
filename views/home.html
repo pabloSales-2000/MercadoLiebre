@@ -18,8 +18,11 @@
 <body>
     <header>
         <div class="header">
-            <div id="logo"><img src="/images/logo-mercado-liebre.svg" alt="Logotipo"></div>
-
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo-mercado-liebre.svg" alt="Logotipo">
+                </a>
+            </div>
             <div class="barra-busq-padre">
                 <form action="GET">
                     <input class="barra-busq" type="text" placeholder="Buscar productos, marcas y mas ...">
@@ -31,7 +34,7 @@
             </div>
 
             <div id="comprar-en-cuotas">
-                <p id="comprar-en-cuotas-text"></p><!--como agrandar?--><i id="margen-iconos-header"
+                <p id="comprar-en-cuotas-text"></p><i id="margen-iconos-header"
                     class="fa-solid fa-hand-holding-dollar"></i>compra en cuotas y sin
                 tarjeta
                 de
@@ -40,22 +43,15 @@
         </div>
         <nav class="nav">
             <ul class="nav-items" type="none">
-                <li id="nav_items">Ofertas
-                </li>
-                <li id="nav_items">Tiendas oficiales
-                </li>
-                <li id="nav_items">Vender<!--<a href="#">Vender</a>-->
-                </li>
-                <li id="nav_items">Ayuda
-                </li>
+                <li id="nav_items"><a href="#">Ofertas</a></li>
+                <li id="nav_items"><a href="#">Tiendas oficiales</a></li>
+                <li id="nav_items"><a href="#">Vender</a></li>
+                <li id="nav_items"><a href="#">Ayuda</a></li>
             </ul>
             <ul class="nav-items" type="none">
-                <li id="nav_items">Crea tu cuenta<i id="margen-iconos-header" class="fa-regular fa-id-card"></i>
-                </li>
-                <li id="nav_items">Ingresa<i id="margen-iconos-header" class="fa-solid fa-right-to-bracket"></i>
-                </li>
-                <li id="nav_items">Mis compras<i id="margen-iconos-header" class="fa-solid fa-basket-shopping"></i>
-                </li>
+                <li id="nav-items"><a href="/register">Crea tu cuenta<i id="margen-iconos-header" class="fa-regular fa-id-card"></i></a></li>
+                <li id="nav_items"><a href="/login">Ingresa<i id="margen-iconos-header" class="fa-solid fa-right-to-bracket"></i></a></li>
+                <li id="nav_items"><a href="#">Mis compras<i id="margen-iconos-header" class="fa-solid fa-basket-shopping"></i></a></li>
             </ul>
         </nav>
         <div class="burger">

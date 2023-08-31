@@ -250,11 +250,17 @@ main section article i{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        gap: 1.5em
+        gap: 1.5em;
+        color: rgba(26, 26, 26, 0.8);
     }
-    #nav_items{
+
+    .nav_items li{
         font-size: 15px;
-        cursor: pointer;
+    }
+
+    .nav-items a{
+        text-decoration: none;
+        color: rgba(26, 26, 26, 0.8);
     }
 
     .articulos{
