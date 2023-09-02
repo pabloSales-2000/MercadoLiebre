@@ -152,7 +152,7 @@ ul{
     font-size: 2em;
     color: #1259c3;
 }
-main section article i{
+main section article i{ /*Repasar position absolute y relative*/
     display: block;
     color: #39b54a;
     font-size: 16px;
@@ -242,8 +242,7 @@ main section article i{
         transform: rotate(-90deg);
     }
     
-    .articulos:hover .descripcion {
-        display:block;
+    .articulos:hover .descripcion { /*Como hacer q aparezca el nombre con hover sin q se agrande el cuadro del producto*/
         font-size: 15px;
         margin-top: 5px;
         color: #666;
