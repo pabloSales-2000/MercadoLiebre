@@ -11,7 +11,7 @@ app.listen(PORT, () => {
 
 app.use(express.static(publicPath));
 
-app.use('/productos', rutasProductos);
+//app.use('/productos', rutasProductos);
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/home.html"));
@@ -25,6 +25,6 @@ app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "./views/login.html"))
 })
 
-app.get('/productos/:id', (req, res) => {
-    res.send(`Bienvenidos al producto ${req.params.id}`)
+app.get('/productos/:idProducto', (req, res) => {
+    res.send(`Bienvenidos al producto ${req.params.idProducto}`)
 })
