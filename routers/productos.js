@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router;
+const router = express.Router();
 
 router.get('/:idProducto', (req, res) => {
     res.send(`Bienvenidos al producto ${req.params.idProducto}`)
