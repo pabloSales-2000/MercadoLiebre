@@ -12,8 +12,9 @@ app.listen(PORT, () => {
 
 app.use(express.static(publicPath));
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
+
+app.use('/', rutasMain);
 
 app.use('/productos', rutasProductos);
 
-app.use('/', rutasMain);

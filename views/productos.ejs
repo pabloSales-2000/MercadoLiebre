@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+
+    <body>
+
+        <%- include('./partials/header') %>
+
+            <h2>Productos de Kicho</h2> <!--logica javascript en un html (ejs)-->
+            <% for (let i=1; i < 5; i++) { %>
+                <p>Producto numero <%= i %>
+                </p>
+                <% } %>
+
+                    <h2>Otros productos</h2> <!--Ejemplo parametros compartidos-->
+
+                    <% for (let producto of productos) { %>
+                        <p>
+                            <%= producto %>
+                        </p>
+                        <% } %>
+
+                            <%- include('./partials/footer') %>
+
+    </body>
+
+</html>
