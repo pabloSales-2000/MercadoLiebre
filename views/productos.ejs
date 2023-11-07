@@ -22,7 +22,52 @@
                         </p>
                         <% } %>
 
-                            <%- include('./partials/footer') %>
+                            <h2>Productos con vinculo</h2> <!--Ejemplo productos hipervinculos-->
+
+                            <% for (let vinculo of productosHipervinculo) { %>
+                                <p>
+                                    <a href="#">
+                                        <%= vinculo.nombre %>
+                                    </a>
+                                </p>
+                                <% } %>
+
+                                    <h2>Productos con enlace y URL</h2>
+                                    <!--Ejemplo query string (se coloca luego del '?')-->
+
+                                    <% for (let vinculo of productosHipervinculo) { %>
+                                        <p>
+                                            <a href="/productos/detail?productoId=<%= vinculo.id %>">
+                                                <!--Hay q aclarar que en framewors que usan rutas parametrizadas como express no se utilizan query strings-->
+                                                <%= vinculo.nombre %>
+                                            </a>
+                                        </p>
+                                        <% } %>
+
+
+                                            <h2>Productos con enlace y URL sin query string</h2>
+                                            <!--Ejemplo sin query string -->
+
+                                            <% for (let vinculo of productosHipervinculo) { %>
+                                                <p>
+                                                    <a href="/productos/detail/<%= vinculo.id %>">
+                                                        <%= vinculo.nombre %>
+                                                    </a>
+                                                </p>
+                                                <% } %>
+
+                                                    <h2>Search</h2>
+                                                    <form action="/productos/search" method="GET">
+                                                        <input type=" text" name="search">
+                                                        <!--En la url despues de ? en la query aparecera search porq es lo q puse en name y luego lo q escriba el usuario en el search-->
+                                                        <input type="submit" value="Search">
+                                                    </form>
+
+
+
+
+
+                                                    <%- include('./partials/footer') %>
 
     </body>
 

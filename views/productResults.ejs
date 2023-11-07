@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+
+    <body>
+
+        <%- include('./partials/header') %>
+
+            <h2>Productos Lista</h2>
+            <ul>
+            <% for (let i=0; i < productosResultantes.length; i++) { %>
+                <li>
+                    <a href="/productos/detail?productoId=<%= productosResultantes[i].nombre %>">
+                        <%= productosResultantes[i].nombre %>
+                    </a>
+                </li>
+               
+                <% } %>
+            </ul>
+
+
+
+
+                    <%- include('./partials/footer') %>
+
+    </body>
+
+</html>
