@@ -12,9 +12,15 @@ app.listen(PORT, () => {
 
 app.use(express.static(publicPath));
 
+app.use(express.urlencoded({extended:false}));
+
+app.use(express.json());
+
 app.set('view engine', 'ejs');
 
 app.use('/', rutasMain);
 
 app.use('/productos', rutasProductos);
+
+
 

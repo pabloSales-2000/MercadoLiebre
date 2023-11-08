@@ -17,4 +17,6 @@ router.get("/login", mainController.login)
                      // res.sendFile(path.join(__dirname, "./views/login.ejs"))
                      //}
 
+router.post("/login", mainController.guardarLogin)
+
 module.exports = router;
