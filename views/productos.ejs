@@ -53,6 +53,10 @@
                                                     <a href="/productos/detail/<%= vinculo.id %>">
                                                         <%= vinculo.nombre %>
                                                     </a>
+                                                    <form method="POST" action="/productos/delete/<%= vinculo.id %>?_method=DELETE">
+                                                        <button type="submit">DELETE</button>
+                                                    </form>
+                                                    
                                                 </p>
                                                 <% } %>
 

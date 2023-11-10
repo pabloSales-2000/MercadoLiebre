@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+    <body>
+        <%- include('./partials/header') %>
+
+        <h2>Editar nombre del producto <%= productToEdit.nombre %></h2>
+        <form method="POST" action="/productos/edit?_method=PUT"> <!--Esta query "?_method=PUT" es el paso adicional en los formularios para poder trabajar con put o delete-->
+            <label for="">Nombre producto</label>
+            <input type="text" name="nombre" value="<%= productToEdit.nombre %>">
+
+            <input type="submit" value="Editar">
+
+        </form>
+
+
+
+
+
+            <%- include('./partials/footer') %>
+    </body>
+
+</html>

@@ -43,6 +43,19 @@ const productController = {
         } else {
             res.send(`Bienvenido a los comentarios del producto ${req.params.idProducto} y estas enfocado en el comentario ${req.params.idComentario}`)
         }
+    },
+
+    edit: (req, res) => {
+        let idProducto = req.params.idProducto //estoy guardando en la variable el idProducto que introduzca el usuario a travez del objeto req y el metodo params
+        let productosEditar = [
+            { id: 1, nombre: 'Iphone 12 pro' },
+            { id: 2, nombre: 'MacBook Pro 15' },
+            { id: 3, nombre: 'Impresora HP' }
+        ]
+
+        let productToEdit = productosEditar[idProducto] //creo una variable que almacenara el producto a editar del array con objetos q cada objeto es un producto y el indice sera el id del producto almacenado en la var de mas arriba
+
+        res.render('productEdit', {productToEdit: productToEdit }) 
     }
 }
 
