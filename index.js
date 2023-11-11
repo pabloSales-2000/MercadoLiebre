@@ -19,4 +19,7 @@ app.use(express.json());                       // Le estamos aclarando a la app 
 app.use(methodOverride('_method'))
 app.use('/', rutasMain);
 app.use('/productos', rutasProductos);
+app.use((req, res, next)=>{
+    res.status(404).render('not-found')
+})
 
