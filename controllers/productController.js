@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 const productController = {
 
     search: (req, res) => {
@@ -56,6 +58,14 @@ const productController = {
         let productToEdit = productosEditar[idProducto] //creo una variable que almacenara el producto a editar del array con objetos q cada objeto es un producto y el indice sera el id del producto almacenado en la var de mas arriba
 
         res.render('productEdit', {productToEdit: productToEdit }) 
+    },
+    userList: (req, res) => {  //metodo para mostrar los usuarios q tengo en el usuarios.json
+
+        let usuariosJson = fs.readFileSync('usuarios.json', {encoding: 'utf-8'})  //leo lo q tiene actualmente el archivo
+
+        let usuarios = JSON.parse(usuariosJson)  // descomprimo al json y lo guardo en la variable usuarios, para luego poder manejar esos datos en el ejs con codigo javascript
+
+        return res.render('userList', {usuarios: usuarios}) //comparto la variable con la vista para poder mostrar en la vista los username de los usuarios q se logean en /login
     }
 }
 

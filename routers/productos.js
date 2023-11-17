@@ -16,9 +16,11 @@ router.delete('/delete/:idProducto', (req, res) =>{  // el :idProducto es el que
     res.send("SOY DELETE!!!")
 })
 
-router.get('/:idProducto', productController.idProducto)
+router.get('/detalle/:idProducto', productController.idProducto)
 
 router.get('/:idProducto/comentarios/:idComentario?', productController.comentarios)
+
+router.get('/usuarios/list', productController.userList)
 
 
 

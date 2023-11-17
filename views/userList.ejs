@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+
+    <body>
+        <%- include('./partials/header') %>
+
+        <h2>LISTADO DE USUARIOS ACTIVOS</h2>
+
+        <% for (let user of usuarios) { %> 
+            <p>
+                <%= user.username %>
+            </p>
+            <% } %>
+
+
+
+
+
+
+            <%- include('./partials/footer') %>
+
+    </body>
+
+</html>
