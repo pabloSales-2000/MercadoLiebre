@@ -1,4 +1,5 @@
 const express = require('express');
+const upload = require('../middlewares/multer.js')
 const router = express.Router();
 const productController = require('../controllers/productController')
 
@@ -21,6 +22,10 @@ router.get('/detalle/:idProducto', productController.idProducto)
 router.get('/:idProducto/comentarios/:idComentario?', productController.comentarios)
 
 router.get('/usuarios/list', productController.userList)
+
+router.get('/subirArchivo', productController.archivos)
+
+router.post('/subirArchivo', upload.single('img'), productController.subirArchivo)
 
 
 

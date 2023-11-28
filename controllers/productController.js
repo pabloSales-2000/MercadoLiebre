@@ -66,6 +66,12 @@ const productController = {
         let usuarios = JSON.parse(usuariosJson)  // descomprimo al json y lo guardo en la variable usuarios, para luego poder manejar esos datos en el ejs con codigo javascript
 
         return res.render('userList', {usuarios: usuarios}) //comparto la variable con la vista para poder mostrar en la vista los username de los usuarios q se logean en /login
+    },
+    archivos: (req, res) => {
+        return res.render('archivosproduct')
+    },
+    subirArchivo: (req, res) => {
+        res.redirect("/")
     }
 }
 
