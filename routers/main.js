@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mainController = require('../controllers/mainController.js')
+const logDBMiddleware = require('../middlewares/logDBmiddleware.js')
 
 router.get('/', mainController.home)
              // (req, res) => {
@@ -17,6 +18,6 @@ router.get("/login", mainController.login)
                      // res.sendFile(path.join(__dirname, "./views/login.ejs"))
                      //}
 
-router.post("/login", mainController.guardarLogin)
+router.post("/login", logDBMiddleware , mainController.guardarLogin)
 
-module.exports = router;
+module.exports = router;  //al exportar router exporto todas las rutas definidas en este archivo?

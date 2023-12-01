@@ -5,9 +5,10 @@ const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, './public/archivospruebas')
     },
+    //LAS IMAGENES NO SE GUARDAN CON EL NOMBRE QUE ESTABLECI, REVISAR!!
     filename: (req, file, cb) => {
-        const uniqueSuffix = Date.now() + path.extname(file.originalname) //esta variable tiene la fecha + la extension del archivo (file)
-        cb(null, file.fieldname + '-' + uniqueSuffix)
+        const fileName =`img ${Date.now()} ${path.extname(file.originalname)}`  //esta variable tiene la fecha + la extension del archivo (file)
+        cb(null, fileName)
     }
 })
 

@@ -24,6 +24,10 @@ app.use(express.json());                       // Le estamos aclarando a la app 
 //config para poder utilizar put y delete 
 app.use(methodOverride('_method'))
 
+//middleware para registro de rutas visitadas
+const logMiddleware = require('./middlewares/logMiddleware.js')
+app.use(logMiddleware)
+
 //las rutas con prefijo '/' seran atendidas por la var rutasMain
 app.use('/', rutasMain);
 

@@ -2,7 +2,7 @@ const fs = require('fs')
 
 const productController = {
 
-    search: (req, res) => {
+    search: (req, res,) => {
         let loQueBuscoElUsuario = req.query.search; //si quiero pedir inf de un formulario siempre empiezo con req.query y luego el campo del input q deseo, en este caso search
         //res.send(loQueBuscoElUsuario);
 
