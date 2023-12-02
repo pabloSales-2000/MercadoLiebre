@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator')
 const fs = require('fs') //requiero el paquete file system
 
 const mainController = {
@@ -16,21 +17,21 @@ const mainController = {
 
     guardarLogin: (req, res) => {
         let user = {
-            username : req.body.nombreDeUsuario, // En este objeto se guardaran los datos q llene el usuario en el form, cuando la inf viaja por post
-            contraseña : req.body.contraseña     // usamos req.body (y luego el nombre del campo como esta en el atributo name del input en el html) para acceder a ella, no como en GET que era req.query.
+            username: req.body.nombreDeUsuario, // En este objeto se guardaran los datos q llene el usuario en el form, cuando la inf viaja por post
+            contraseña: req.body.contraseña     // usamos req.body (y luego el nombre del campo como esta en el atributo name del input en el html) para acceder a ella, no como en GET que era req.query.
         }
         //GUARDAR USUARIOS
 
         //1ERO: Leer las cosas q ya habia. Porque si ya tenia usuarios registrados no quiero perder esa info
 
-        let archivoUsuarios = fs.readFileSync('usuarios.json', {encoding: 'utf-8'}) //este metodo lee un archivo, explicado en 'prueba.js'
+        let archivoUsuarios = fs.readFileSync('usuarios.json', { encoding: 'utf-8' }) //este metodo lee un archivo, explicado en 'prueba.js'
         let usuarios;  //PREGUNTA: EN QUE MOMENTO SE LE ACLARA A JAVASCRIPT QUE ESTO ES UN ARRAY?
 
-        if(archivoUsuarios == ""){                      //primero leo el archivo, pero puede que el contenido este vacio
+        if (archivoUsuarios == "") {                      //primero leo el archivo, pero puede que el contenido este vacio
             usuarios = []                               // si es vacio, mi lista de usuarios todavia no tiene nada
-        }else{                                          //por el contrario si el archivo ya tenia contenido
+        } else {                                          //por el contrario si el archivo ya tenia contenido
             usuarios = JSON.parse(archivoUsuarios)  //lo que haremos es descomprimir el archivo json para obtener el array de usuarios dentro de la variable usuarios
-        }  
+        }
 
         usuarios.push(user) //en este punto usuarios o esta vacio o contiene el json descomprimido en formato js, con el metodo push de arrays agrego el user nuevo
 
@@ -52,8 +53,44 @@ const mainController = {
         //como este metodo reescribe el archivo cada vez q se utiliza sobre el mismo, cada vez q se guarde un login se reescribiran los datos
 
         res.redirect("/")  // esto hara que cuando el usuario envie o confirme el formulario lo redireccionara a la ruta q pongamos, en este caso HOME
-    }
+    },
 
+    validarA: (req, res) => {
+        res.render('formExpVali')
+    },
+
+    validarB: (req, res) => {
+        let errores = validationResult(req)
+        if (errores.isEmpty()) {                          //isEmpty devuelve un booleano q verifica si errores esta vacio o no
+            let usuario = {                               //si esta vacio, no hay errores, es true y se ejecuta el codigo con normalidad
+                nombreCompleto: req.body.nombreCompleto,  //caso contrario se ejecuta el else
+                email: req.body.email,
+                password: req.body.password,
+                categoria: req.body.categoria
+            }
+
+            let usuariosValidados = fs.readFileSync('usersValidation.json', { encoding: 'utf-8' })
+            let usuariosNuevos;
+
+            if (usuariosValidados == "") {
+                usuariosNuevos = []
+            } else {
+                usuariosNuevos = JSON.parse(usuariosValidados)
+            }
+
+            usuariosNuevos.push(usuario);
+
+            fs.writeFileSync('usersValidation.json', JSON.stringify(usuariosNuevos, null, 2))
+
+            res.redirect('/')
+
+        }else{
+            res.render('formExpVali', {errores : errores.array(), old : req.body}) //comparto la variable errores con la vista y el metodo .array() los va a convertir en un array y me permite enviarlos a la vista, sin este metodo puedo tener algunos problemas. Ademas utilizare forEach en la vista y es un metoo para recorrer arrays
+        }                                                                          //tambien comparto en la var old lo que llega en el body para poder conservar los datos q si esten bien validados y solo se tenga q volver a completar los campos no validados
+        
+        //si hago res.send(errores) me devolvera en la vista un objeto con los errores q haya por campo y sus propiedades por ej msg : 'mensaje de error q definimos en la ruta' y otras prop
+
+    }
 }
 
 module.exports = mainController

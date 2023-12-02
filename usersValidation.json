@@ -1,0 +1,24 @@
+[
+  {
+    "nombreCompleto": "kichonsias",
+    "email": "kicho@b.com",
+    "password": "holasoykichonsias"
+  },
+  {
+    "nombreCompleto": "lula",
+    "email": "lula@a.com",
+    "password": "1234"
+  },
+  {
+    "nombreCompleto": "leomessi",
+    "email": "leo@m.com",
+    "password": "asd456",
+    "categoria": ""
+  },
+  {
+    "nombreCompleto": "marta",
+    "email": "marta@n.com",
+    "password": "jujuy",
+    "categoria": "vendedor"
+  }
+]

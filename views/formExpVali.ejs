@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+
+    <body>
+        <%- include('./partials/header') %>
+
+            <h2>Registro con Express Validator</h2>
+
+            <% if(locals.errores) { %>             <!--Todo lo q enviemos a la vista viene dentro de un objeto q se llama locals-->
+                                                   <!--entonces errores y locals.errores es lo mismo, entonces pregunto si existe en el if-->
+               <% errores.forEach((error) => { %>  <!--si existe recorro el array errores con el forEach y muestro el mensaje q definimos en las rutas con la propiedad .msg del objeto error q almacena dicho mensaje de error q esta recorriendo el array-->
+                <p>                                <!--Dentro del forEach defino una funcion q pondra en un parrafo el mensaje de error-->
+                    <%= error.msg %>               <!--si no pongo el if preguntando si hay o no errores la pagina no se renderizara ya que estaria trabajando sobre errores q es una variable q aun no existe cuando se ingresa por 1era veez al form-->
+                </p>
+
+                <% }) %>
+
+                <% } %>
+
+                    <form method="POST" action="/validar">
+                        <label for="nombreCompleto">Nombre Completo</label>
+                        <input type="text" name="nombreCompleto" value="<%= locals.old && old.nombreCompleto ? old.nombreCompleto : '' %>">
+                        <!--Inicialmente no existe locals.old ya que esto contiene el body del formulario y aun  no se envio nada cuando se ingresa por 1era vez, entonces pregunto si existe o no para no tener errores trabajando con una var indefinida-->
+                        <!--con un if abreviado pregunto si existe locals.old y si existe old.nombreCompleto si es true el valor del campo se mantiene y si no queda vacio como estaba y asi con los demas inputs-->
+
+                        <label for="email">Correo electronico</label>
+                        <input type="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>">
+
+
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password"> <!--el password al ser un dato sensible no lo mantendremos sino que el usuario debera volver a completar el campo-->
+
+                        
+                        <label for="categoria">Categoria</label>
+                        <select name="categoria">
+                            <option value="">Seleccione una opcion</option>
+                            
+                            <option value="vendedor" <%= locals.old && old.categoria === 'vendedor' ? 'selected' : '' %>>Vendedor</option>
+                            
+                            <option value="comprador"<%= locals.old && old.categoria === 'comprador' ? 'selected' : '' %>>Comprador</option>
+                        </select>
+
+                        <button type="submit">ENVIAR</button>
+
+                    </form>
+
+
+                    <%- include('./partials/footer') %>
+
+    </body>
+
+</html>
