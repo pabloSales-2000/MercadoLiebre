@@ -4,6 +4,7 @@ const path = require('path');
 const publicPath = path.resolve(__dirname, './public') 
 const PORT = process.env.PORT || 8080;
 const methodOverride = require('method-override'); //Este paquete es para poder usar los metodos PUT Y DELETE ya que originalmente no son soportados por los formularios html(q solo pueden recibir get o post) ni todos los navegadores y para asegurar la compatibilidad es este paso adicional
+const session = require('express-session')
 const rutasProductos = require('./routers/productos.js');
 const rutasMain = require('./routers/main.js');
 
@@ -21,6 +22,8 @@ app.use(express.static(publicPath)); //publicPath es una variable q tiene la rut
 app.use(express.urlencoded({extended:false})); // para poder trabajar con los datos de un formulario es necesario config el entorno de nuestra app para q sea capaz de capturar esa informacion
 app.use(express.json());                       // Le estamos aclarando a la app q todo lo que llegue de un form queremos capturarlo en forma de objeto literal y tmb convertir esa inf en un JSON en caso de necesitarlo
  
+app.use(session({secret: 'Es un secreetoo, de tu mirada y la mia un presentimiento'}))
+
 //config para poder utilizar put y delete 
 app.use(methodOverride('_method'))
 

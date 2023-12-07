@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { body } = require('express-validator') //utilizando destructuracion de objetos accedo solo a la prop body de la libreria de express validator
+const { body, check } = require('express-validator') //utilizando destructuracion de objetos accedo solo a la prop body de la libreria de express validator
 //EXPRES VALIDATOR SOLO VALIDA STRINGS!!!!
 
 const mainController = require('../controllers/mainController.js')
@@ -48,6 +48,8 @@ const condicional = require('../middlewares/condicional.js')
 
 router.get('/prueba',condicional ,mainController.prueba)
 
+router.get('/pruebaSession', mainController.pruebaSession ) //esta ruta muestra un mensaje que se puede ver en el controlador
 
+router.get('/numeroSession', mainController.numeroSession) 
 
 module.exports = router;  //al exportar router exporto todas las rutas definidas en este archivo?

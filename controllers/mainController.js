@@ -1,4 +1,3 @@
-const { log } = require('console')
 const { validationResult } = require('express-validator')
 const fs = require('fs') //requiero el paquete file system
 
@@ -92,9 +91,23 @@ const mainController = {
         //si hago res.send(errores) me devolvera en la vista un objeto con los errores q haya por campo y sus propiedades por ej msg : 'mensaje de error q definimos en la ruta' y otras prop
 
     },
+
     prueba: (req, res) => {
         console.log('estoy en el controller');
         res.send('hola')
+    },
+
+    pruebaSession: (req, res) => {                  //req.session.numeroVisitas es una var q se mantiene y puedo compartir en todas las paginas
+        if(req.session.numeroVisitas == undefined){ //inicialmente sera undefined y el if dara true,
+            req.session.numeroVisitas = 0           // entonces se incializara la variable en 0 y afuera del if se le suma uno
+        }
+        req.session.numeroVisitas ++;               //luego por cada vez q acceda a la ruta esta var aumentara de 1 en 1
+    
+        res.send(`Esta pag tiene ${req.session.numeroVisitas} views`) //y este mensaje mando a la vista para ver el valor de req.session.numeroVisitas
+    },
+
+    numeroSession: (req, res) => {
+        res.send(`Session tiene el numero: ${req.session.numeroVisitas}`) //este metodo del controller atiende otra ruta y la variable sigue teniendo el mismo valor, se comparte entre todas las paginas de mi web
     }
 }
 
