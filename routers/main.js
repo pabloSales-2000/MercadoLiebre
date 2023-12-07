@@ -1,15 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const { body } = require('express-validator') //utilizando destructuracion de objetos accedo solo a la prop body de la libreria de express validator
+//EXPRES VALIDATOR SOLO VALIDA STRINGS!!!!
+
 const mainController = require('../controllers/mainController.js')
 const logDBMiddleware = require('../middlewares/logDBmiddleware.js')
 
 //Validaciones
 const validacionesFormEV = [   //aclaro en un array cuales seran las validaciones para el form, luego esta variable la utilizare como middleware en la ruta q atiende el formExpVali
 
-    body('nombreCompleto').notEmpty().withMessage('Debes completar el campo de nombre'), //en body pongo el nombre del campo del input del form. notEmpty quiere decir q el campo no puede estar vacio y withMessege es para enviar un mensaje de error si el usuario no llena el campo
-    body('email').isEmail().withMessage('Debe ingresar un e-mail valido'), //haremos una validacion por cada campo de input
-    body('password').notEmpty().withMessage('Ingrese una contraseña')
+body('nombreCompleto') //en body pongo el nombre del campo del input del form. 
+    .notEmpty().withMessage('Debes completar el campo de nombre'), //notEmpty quiere decir q el campo no puede estar vacio y withMessege es para enviar un mensaje de error si el usuario no llena el campo
+body('email')   //haremos una validacion por cada campo de input
+    .isEmail().withMessage('Debe ingresar un e-mail valido') //puedo ir poniendo en columna las validaciones y al lado de cada una el mensaje de error si dicha cond no se cumple
+    .isLength({min: 5, max: 100}).withMessage('El mail debe tener minimo 5 y maximo 100 caracteres'), 
+body('password')
+    .notEmpty().withMessage('Ingrese una contraseña')
 
 ];
 
@@ -37,6 +43,10 @@ router.get('/validar', mainController.validarA)
 
 //ruta post que procesara los datos enviados del formulario
 router.post('/validar', validacionesFormEV, mainController.validarB)
+
+const condicional = require('../middlewares/condicional.js')
+
+router.get('/prueba',condicional ,mainController.prueba)
 
 
 

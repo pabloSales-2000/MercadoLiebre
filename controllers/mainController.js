@@ -1,3 +1,4 @@
+const { log } = require('console')
 const { validationResult } = require('express-validator')
 const fs = require('fs') //requiero el paquete file system
 
@@ -84,13 +85,19 @@ const mainController = {
 
             res.redirect('/')
 
-        }else{
-            res.render('formExpVali', {errores : errores.array(), old : req.body}) //comparto la variable errores con la vista y el metodo .array() los va a convertir en un array y me permite enviarlos a la vista, sin este metodo puedo tener algunos problemas. Ademas utilizare forEach en la vista y es un metoo para recorrer arrays
+        } else {
+            res.render('formExpVali', { errores: errores.array(), old: req.body }) //comparto la variable errores con la vista y el metodo .array() los va a convertir en un array y me permite enviarlos a la vista, sin este metodo puedo tener algunos problemas. Ademas utilizare forEach en la vista y es un metoo para recorrer arrays
         }                                                                          //tambien comparto en la var old lo que llega en el body para poder conservar los datos q si esten bien validados y solo se tenga q volver a completar los campos no validados
-        
+
         //si hago res.send(errores) me devolvera en la vista un objeto con los errores q haya por campo y sus propiedades por ej msg : 'mensaje de error q definimos en la ruta' y otras prop
 
+    },
+    prueba: (req, res) => {
+        console.log('estoy en el controller');
+        res.send('hola')
     }
 }
 
 module.exports = mainController
+//los metodos del controlador pueden ser varias const q contengan una funcion y exportar todo eso como un objeto
+//asi module.exports = {funcion1, funcion2}

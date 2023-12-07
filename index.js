@@ -15,7 +15,7 @@ app.listen(PORT, () => {
 // configuro cual sera mi motor de vistas (template engine)
 app.set('view engine', 'ejs');
 
-//establezco donde se almacenaran los archivos publicos
+//establezco donde se almacenaran los archivos publicos //esto es un middleware de aplicacion (global)
 app.use(express.static(publicPath)); //publicPath es una variable q tiene la ruta de la carpeta public
 
 app.use(express.urlencoded({extended:false})); // para poder trabajar con los datos de un formulario es necesario config el entorno de nuestra app para q sea capaz de capturar esa informacion
