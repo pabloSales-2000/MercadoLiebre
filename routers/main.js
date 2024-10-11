@@ -19,6 +19,15 @@ body('password')
 
 ];
 
+const validacionesLogin = [
+check('nombreDeUsuario')
+    .notEmpty().withMessage('Llene campo de nombre')
+    .isLength({min :4, max: 12}).withMessage('El username debe tener entre 4 y 12 caracteres'),
+check('contraseña')
+    .notEmpty().withMessage('Introduzca una contraseña')
+]
+
+
 
 router.get('/', mainController.home)
 // (req, res) => {
@@ -35,7 +44,7 @@ router.get("/login", mainController.login)
 // res.sendFile(path.join(__dirname, "./views/login.ejs"))
 //}
 
-router.post("/login", logDBMiddleware, mainController.guardarLogin)
+router.post("/login", validacionesLogin , mainController.guardarLogin)
 
 
 //esta ruta muestra el formulario q utilizare para practicar con express validator

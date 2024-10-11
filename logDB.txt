@@ -1,1 +1,1 @@
-se registro el usuario {"nombreDeUsuario":"GOLA","contraseña":"GOLA"}
+se registro el usuario {"nombreDeUsuario":"soypablo","contraseña":"holasoypablo"}

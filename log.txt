@@ -1,1 +1,1 @@
-se ingreso a la pagina /numeroSession
+se ingreso a la pagina /

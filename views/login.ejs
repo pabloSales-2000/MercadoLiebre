@@ -3,7 +3,6 @@
 
 <%- include('./partials/head') %>
 
-
     <body>
 
         <%- include('./partials/header') %>
@@ -11,26 +10,36 @@
             <main>
                 <div class="form-container">
                     <h2 class="titulo-form">Inicio de sesion</h2>
-                    <form class="form" action="/login" method="POST">
 
-                        <div class="input-item">
-                            <label for="nombreDeUsuario">Nombre de usuario</label>
-                            <br>
-                            <input type="text" id="nombreDeUsuario" name="nombreDeUsuario" placeholder="Username"
-                                required>
-                        </div>
+                    <% if(locals.errores) { %>
+                        <% errores.forEach((error)=> { %>
+                            <p>
+                                <%= error.msg %>
+                            </p>
 
-                        <div class="input-item">
-                            <label for="contraseña">Contraseña</label>
-                            <br>
-                            <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
-                        </div>
+                            <% }) %>
 
-                        <div class="botones">
-                            <button class="boton-confirmar" type="submit">Confirmar</button>
-                        </div>
+                                <% } %>
 
-                    </form>
+                                    <form class="form" action="/login" method="POST">
+
+                                        <div class="input-item">
+                                            <label for="nombreDeUsuario">Nombre de usuario</label>
+                                            <br>
+                                            <input type="text" id="nombreDeUsuario" name="nombreDeUsuario">
+                                        </div>
+
+                                        <div class="input-item">
+                                            <label for="contraseña">Contraseña</label>
+                                            <br>
+                                            <input type="password" id="contraseña" name="contraseña">
+                                        </div>
+
+                                        <div class="botones">
+                                            <button class="boton-confirmar" type="submit">Confirmar</button>
+                                        </div>
+
+                                    </form>
                 </div>
             </main>
 

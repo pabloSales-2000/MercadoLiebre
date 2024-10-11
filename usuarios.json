@@ -1,1 +1,23 @@
-[{"username":"paolasales","contraseña":"lauti2022"},{"username":"GOLA","contraseña":"GOLA"}]
+[
+  {
+    "username": "pablo",
+    "contraseña": "pablo123"
+  },
+  {
+    "username": "paola",
+    "contraseña": "paola123"
+  },
+  {
+    "username": "pedro",
+    "contraseña": "pedro123"
+  },
+  {
+    "username": "liliana",
+    "contraseña": "liliana123"
+  },
+  {
+    "username": "lula",
+    "contraseña": "lula123"
+  }
+]
+

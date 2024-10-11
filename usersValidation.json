@@ -20,5 +20,17 @@
     "email": "marta@n.com",
     "password": "jujuy",
     "categoria": "vendedor"
+  },
+  {
+    "nombreCompleto": "asdsd",
+    "email": "asdad@test.com",
+    "password": "asdsada",
+    "categoria": "vendedor"
+  },
+  {
+    "nombreCompleto": "asdasdsads",
+    "email": "hola@yahoo.com",
+    "password": "asdasdasd",
+    "categoria": "comprador"
   }
 ]
